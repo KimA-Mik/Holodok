@@ -16,6 +16,8 @@
 	<description>Holodok</description>
 	<properties>
 		<java.version>17</java.version>
+		<spring.profiles.active>dev</spring.profiles.active>
+		<site.url>http://localhost:8080/</site.url>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -51,6 +53,14 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
 	</build>
+
 
 </project>
