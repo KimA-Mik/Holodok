@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" c>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Поставщики</title>
+  <link th:href="@{/styles/css/table.css}" rel="stylesheet">
+</head>
+<style>
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+</style>
+
+<body>
+<div class = "center">
+  <h1 align = "center">Холодок - поставщики</h1>
+  <h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Назвение</th>
+          <th>Директор</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:if="${companies.empty}">
+          <td colspan="2">Поставщики не заданы</td>
+        </tr>
+        <tr th:each="company :${companies}">
+          <td><a th:href="@{/providers/{id}(id = ${company.id})}"><span th:text="${company.companyName}">  </span></a></td>
+          <td><a><span th:text="${company.companyDirectorName}">  </span></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <div><a href="/providers">Список поставщиков</a></div>
+    <div><a href="#" onclick="history.back()">Назад</a></div>
+  </h2>
+</div>
+</body>
+</html>

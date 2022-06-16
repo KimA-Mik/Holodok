@@ -9,7 +9,6 @@ public class MainController {
 
     @GetMapping()
     public String indexPage(Model model){
-        model.addAttribute("hello","HеТ Недam");
         return "main/index";
     }
 }
