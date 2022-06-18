@@ -22,7 +22,7 @@ public class CompanyDAO {
         try {
             String sql = "SELECT * FROM companies WHERE id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(id, 1);
+            preparedStatement.setInt(1, id);
             var res = preparedStatement.executeQuery();
             if (res.next()){
                 int ID = res.getInt("id");
